@@ -1,7 +1,7 @@
 $(document).ready(function() {
     
     // SET SOME GLOBAL VARIABLES
-    
+    var items = [];
     
 
 	$.getJSON('http://content.guardianapis.com/search?q=arsenal&format=json&api-key=ragnru2k9y5fwm7eg2r7824y', function(info){
@@ -9,9 +9,15 @@ $(document).ready(function() {
 
 
 			var output='';
+        
+        
+        
+        
 			for (var i = 0; i <= info.response.results.length-1; i++) {
                 
                 output += '<li>hi</li>';
+                
+                items[i] = info.response.results[i];
                 
 				for (key in info.response.results[i]) {
                     output += '<li>whaaaa</li>';
